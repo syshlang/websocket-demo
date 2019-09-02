@@ -17,8 +17,7 @@
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
   <properties>
-      <tomcat.version>2.2</tomcat.version>
-      <server.port>8080</server.port>
+    <server.port>8080</server.port>
   </properties>
 
 
@@ -36,11 +35,22 @@
         <plugin>
           <groupId>org.apache.tomcat.maven</groupId>
           <artifactId>tomcat7-maven-plugin</artifactId>
-          <version>${tomcat.version}</version>
           <configuration>
             <port>${server.port}</port>
             <path>/${project.artifactId}</path>
             <uriEncoding>${project.build.sourceEncoding}</uriEncoding>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.eclipse.jetty</groupId>
+          <artifactId>jetty-maven-plugin</artifactId>
+          <configuration>
+            <webApp>
+              <contextPath>/${project.artifactId}</contextPath>
+            </webApp>
+            <httpConnector>
+              <port>${server.port}</port>
+            </httpConnector>
           </configuration>
         </plugin>
       </plugins>

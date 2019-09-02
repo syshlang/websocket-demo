@@ -22,6 +22,8 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <spring.version>4.3.25.RELEASE</spring.version>
+    <tomcat.version>2.2</tomcat.version>
+    <jetty.version>9.4.2.v20170220</jetty.version>
   </properties>
 
   <dependencyManagement>
@@ -119,8 +121,18 @@
   </dependencies>
 
   <build>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    <pluginManagement>
       <plugins>
+        <plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat7-maven-plugin</artifactId>
+          <version>${tomcat.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.eclipse.jetty</groupId>
+          <artifactId>jetty-maven-plugin</artifactId>
+          <version>${jetty.version}</version>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
