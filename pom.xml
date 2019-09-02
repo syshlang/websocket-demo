@@ -13,7 +13,7 @@
   </modules>
   <packaging>pom</packaging>
 
-  <name>websocket-demo Maven Webapp</name>
+  <name>websocket-demo</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -24,6 +24,15 @@
     <spring.version>4.3.25.RELEASE</spring.version>
   </properties>
 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.syshlang</groupId>
+        <artifactId>websocket-simple</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   <dependencies>
     <!--添加spring、springmvc依赖-->
     <!--  aop   -->
@@ -110,7 +119,6 @@
   </dependencies>
 
   <build>
-    <finalName>websocket-demo</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
       </plugins>
