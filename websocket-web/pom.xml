@@ -9,7 +9,6 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.syshlang</groupId>
   <artifactId>websocket-web</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
@@ -17,13 +16,16 @@
   <name>websocket-web Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
+  <properties>
+      <tomcat.version>2.2</tomcat.version>
+      <server.port>8080</server.port>
+  </properties>
+
 
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
+      <groupId>com.syshlang</groupId>
+      <artifactId>websocket-simple</artifactId>
     </dependency>
   </dependencies>
 
@@ -31,6 +33,16 @@
     <finalName>websocket-web</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
+        <plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat7-maven-plugin</artifactId>
+          <version>${tomcat.version}</version>
+          <configuration>
+            <port>${server.port}</port>
+            <path>/${project.artifactId}</path>
+            <uriEncoding>${project.build.sourceEncoding}</uriEncoding>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
