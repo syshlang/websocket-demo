@@ -230,5 +230,4 @@ local.properties
 
 .gitignore
 .idea/
-websocket-demo.iml
-websocket-simple/src/
+
