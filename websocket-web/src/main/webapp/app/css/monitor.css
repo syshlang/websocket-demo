@@ -1,0 +1,205 @@
+/*
+ * Copyright (c) 2019. GRGBanking
+ * @File: elock_monitor.css
+ * @Description:
+ * @Author: sunys
+ * @Date: 2019/8/6 下午5:32
+ * @since:
+ */
+
+i {
+    font-style: normal
+}
+
+/**
+ * 电子锁列表
+ */
+.ebm_body {
+    padding: 10px;
+    font-size: 12px;
+    color: #3b3b3b;
+}
+
+.ebm_box {
+    background-color: #fff;
+    border: 1px solid #A0B9D5;
+    margin-bottom: 18px;
+    width: 98%;
+    margin-left: 10px;
+}
+
+.ebm_box:hover {
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.10);
+}
+
+.ebm_box_title {
+    width: auto;
+    height: 32px;
+    line-height: 32px;
+    padding-left: 10px;
+    background-image: linear-gradient(180deg, #EDF4FA 0%, #E1EEF6 100%);
+    border-bottom: 1px solid #A0B9D5;
+}
+
+.ebm_box_title>span {
+    font-weight: 700;
+    float: left;
+    color: #787878
+}
+
+.ebm_box_title>span:nth-last-child(2) {
+    color: #3b3b3b !important;
+}
+
+.ebm_box_text {
+    float: right;
+}
+
+.ebm_box_text>span {
+    margin-right: 14px;
+}
+
+.text_round {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    display: inline-block;
+    position: relative;
+    left: -2px;
+    top: 1px;
+}
+
+.text_round_blue {
+    background-image: linear-gradient(180deg, #E8F4FD 0%, #D3EDFC 100%);
+    border: 1px solid #A0B9D5;
+}
+
+.text_round_yellow {
+    background-image: linear-gradient(180deg, #FDE9CF 0%, #FFDAA9 100%);
+    border: 1px solid #DDA964;
+}
+
+.text_round_red {
+    background-image: linear-gradient(180deg, #FCCFCF 0%, #FEAAAA 100%);
+    border: 1px solid #D67B7B;
+}
+
+.text_round_text {
+    color: #1D7FDD;
+}
+
+.ebm_box_main {
+    margin: 5px 0 0 15px;
+    position: relative;
+    max-height: 360px;
+    overflow: auto;
+}
+
+.ebm_main {
+    position: relative;
+}
+
+.ebm_dzs {
+    width: 72px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 26px;
+    margin: 0 18px 18px 0;
+    background-image: linear-gradient(180deg, #E8F4FD 0%, #D3EDFC 100%);
+    border: 1px solid #A0B9D5;
+    border-radius: 16px;
+    text-align: center;
+    position: relative;
+    display: inline-table;
+    cursor: pointer;
+}
+
+.ebm_dzs:hover {
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.10);
+}
+.ebm_dzs img {
+    position: absolute;
+    left: -1px;
+    bottom: 0px;
+}
+
+.tipso_bubble{
+    border: 1px solid #A0B9D5;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.10);
+    border-radius: 2px;
+    padding: 0px;
+}
+
+.tipso_content>p {
+    background-image: linear-gradient(180deg, #F3F7F9 0%, #C8E6F7 100%);
+    border-bottom: 1px solid #81AAD5;
+    border-radius: 2px 2px 0 0;
+    color: #6A7072;
+}
+.tipso_arrow{
+    border-color:#A0B9D5 transparent transparent !important;
+}
+
+/*.ebm_add > i {
+	position: absolute;
+    width: 0px;
+    height: 4px;
+	left: 16px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #fff;
+}*/
+
+.ebm_add>img {
+    position: absolute;
+    left: 14px;
+}
+
+.ebm_color_blue {
+    background-image: linear-gradient(180deg, #E8F4FD 0%, #D3EDFC 100%) !important;
+    border: 1px solid #A0B9D5 !important;
+}
+
+.ebm_color_yellow {
+    background-image: linear-gradient(180deg, #FDE9CF 0%, #FFDAA9 100%) !important;
+    border: 1px solid #DDA964 !important;
+}
+
+.ebm_color_red {
+    background-image: linear-gradient(180deg, #FCCFCF 0%, #FEAAAA 100%) !important;
+    border: 1px solid #D67B7B !important;
+}
+
+/*
+每行最后一个改变浮层方向，使其不被浏览器遮挡
+ */
+.ebm_main_right .ebm_add {
+    left: auto !important;
+    right: 20px !important;
+}
+
+.ebm_main_right .ebm_add>img {
+    left: auto !important;
+    right: 16px !important;
+}
+
+/*
+翻页样式
+ */
+.bottom_page>i {
+    float: left;
+    margin-left: 10px;
+}
+
+.ebm_box_page {
+    float: left !important;
+    background-image: linear-gradient(180deg, #FFFFFF 0%, #E8E8E8 100%);
+    border: 1px solid #C0C0C0;
+    border-radius: 12px;
+    padding-left: 12px;
+}
+.bottom_page {
+    position: fixed;
+    bottom: 5px;
+    right: 50px;
+}
