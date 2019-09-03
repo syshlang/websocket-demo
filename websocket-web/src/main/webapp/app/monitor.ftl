@@ -8,9 +8,10 @@
     <title>Accordion Tools - jQuery EasyUI Demo</title>
     <link rel="stylesheet" type="text/css" href="../jquery-easyui-1.8.5/themes/default/easyui.css">
     <link rel="stylesheet" type="text/css" href="../jquery-easyui-1.8.5/themes/icon.css">
-    <link rel="stylesheet" type="text/css" href="${ctx}/js/tipso/tipso.min.css"/>
+    <link rel="stylesheet" type="text/css" href="${contextPath}/app/js/tipso/tipso.min.css"/>
     <script type="text/javascript" src="../jquery-easyui-1.8.5/jquery.min.js"></script>
     <script type="text/javascript" src="../jquery-easyui-1.8.5/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="${contextPath}/app/js/tipso/tipso.min.js"></script>
     <script type="text/javascript" src="${contextPath}/app/websocket.js"></script>
     <script type="text/javascript" src="${contextPath}/app/monitor.js"></script>
     <link rel="stylesheet" type="text/css" href="${contextPath}/app/css/monitor.css"/>
@@ -21,7 +22,7 @@
 <body>
 <div id="monitor" data-options="region:'center',border:false" style="bottom: 50px;overflow: auto;">
 </div>
-<div class="bottom_page">`
+<div class="bottom_page">
     <i></i>
     <div class="ebm_box_text ebm_box_page">
         <span><i class="text_round text_round_blue"></i>已联网(空闲)：13</span>

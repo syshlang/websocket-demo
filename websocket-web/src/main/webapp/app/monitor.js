@@ -97,7 +97,7 @@ function addElockMonitor(data) {
         }
         var ebmMainHtml = "<span class='ebm_main' id='ebm_main_"+datum.lockCode+"'></span>";
         var ebmDzsHtml = "<div class='ebm_dzs'>" +
-            "<img src='"+ctx+"/web/elock/monitor/images/icon_ebm.png'>" +
+            "<img src='"+ctx+"/app/images/icon_ebm.png'>" +
             "<span>"+datum.lockCode+"</span></div>";
         var $ebmDzs = $(ebmDzsHtml);
         if (datum.onLineStatus === ONLINE_STATUS_FREE){
