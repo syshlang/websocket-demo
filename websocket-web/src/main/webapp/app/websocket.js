@@ -8,7 +8,7 @@
  */
 
 var socketRequest = null;
-function webSocketInit(websocketUrl,onmessageMethod){
+function webSocketInit(websocketUrl,onopenMethod,onmessageMethod,oncloseMethod){
     //检查浏览器是否支持WebSocket
     if (!window.WebSocket) {
         alert("您的浏览器不支持WebSocket，建议使用最新的谷歌浏览器！");
@@ -17,12 +17,19 @@ function webSocketInit(websocketUrl,onmessageMethod){
     if (socketRequest && !socketRequest.closed) {
         return;
     }
+    if (window.location.protocol === 'http:') {
+        websocketUrl = 'ws://' + window.location.host + ctx + websocketUrl;
+    } else {
+        websocketUrl = 'wss://' + window.location.host + ctx + websocketUrl;
+    }
     socketRequest = new WebSocket(websocketUrl);
     socketRequest.onopen = function (event) {
         if (socketRequest) {
             socketRequest.open && socketRequest.open(event, this);
             socketRequest.closed = false;
-            websocket.send("客户端链接成功");
+            if (typeof onopenMethod == "function"){
+                onopenMethod(event);
+            }
         }
     };
 
@@ -33,8 +40,10 @@ function webSocketInit(websocketUrl,onmessageMethod){
     };
 
     socketRequest.onclose = function (event) {
-        console.log(event);
         socketRequest.closed = true;
+        if (typeof oncloseMethod == "function"){
+            oncloseMethod(event);
+        }
     };
 
     socketRequest.onerror = function (event) {
