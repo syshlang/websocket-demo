@@ -1,16 +1,15 @@
 /*
- * Copyright (c) 2019.
- * @File: ElockMonitorTextWebSocket.java
+ * Copyright (c) 2020.
+ * @File: MonitorTextWebSocket.java
  * @Description:
  * @Author: sunys
- * @Date: 2019/9/4 上午8:41
+ * @Date: 2020/11/5 下午4:56
  * @since:
  */
 
-package com.syshlang.websocket.common;
+package com.syshlang.websocket.simple;
 
 
-import freemarker.template.utility.StringUtil;
 import org.apache.log4j.Logger;
 import org.springframework.util.StringUtils;
 import org.springframework.web.socket.CloseStatus;
@@ -27,17 +26,16 @@ import java.util.List;
 /**
  * @author sunys
  */
-public  class ElockMonitorTextWebSocket extends TextWebSocketHandler {
+public  class MonitorTextWebSocket extends TextWebSocketHandler {
 
-    private static Logger logger = Logger.getLogger(ElockMonitorTextWebSocket.class);
+    private static Logger logger = Logger.getLogger(MonitorTextWebSocket.class);
 
-    private  static List<WebSocketSession> elockMonitorWebSocketSession = Collections.synchronizedList(new ArrayList<WebSocketSession>());
+    private  static List<WebSocketSession> monitorWebSocketSession = Collections.synchronizedList(new ArrayList<WebSocketSession>());
 
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
         initQueryParameter(session);
-        Object menuIdobj = session.getAttributes().get("menuId");
-        elockMonitorWebSocketSession.add(session);
+        monitorWebSocketSession.add(session);
         Principal principal = session.getPrincipal();
         if (principal != null){
             String name = principal.getName();
@@ -52,7 +50,7 @@ public  class ElockMonitorTextWebSocket extends TextWebSocketHandler {
 
     @Override
     public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
-        elockMonitorWebSocketSession.remove(session);
+        monitorWebSocketSession.remove(session);
         logger.debug("WebSocket connection closed.");
     }
 
@@ -61,10 +59,14 @@ public  class ElockMonitorTextWebSocket extends TextWebSocketHandler {
         if(session.isOpen()){
             session.close(CloseStatus.SERVER_ERROR);
         }
-        elockMonitorWebSocketSession.remove(session);
+        monitorWebSocketSession.remove(session);
         logger.debug("WebSocket connection closed.",exception);
     }
 
+    /**
+     * 解析参数
+     * @param session
+     */
     private void initQueryParameter(WebSocketSession session){
         if (session == null){
             return;
@@ -93,10 +95,17 @@ public  class ElockMonitorTextWebSocket extends TextWebSocketHandler {
     }
 
 
+    /**
+     * @param message
+     */
     public static void sendMessage(String message){
-        for (WebSocketSession webSocketSession : elockMonitorWebSocketSession) {
-            Principal principal = webSocketSession.getPrincipal();
+        for (WebSocketSession webSocketSession : monitorWebSocketSession) {
+            if(webSocketSession != null && webSocketSession.isOpen()){
+                synchronized (webSocketSession) {
 
+                }
+            }
         }
     }
+
 }

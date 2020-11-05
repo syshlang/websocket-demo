@@ -8,6 +8,14 @@
  */
 
 var socketRequest = null;
+
+/**
+ *
+ * @param websocketUrl websocket URL地址
+ * @param onopenMethod 当websocket打开通道建立链接时执行
+ * @param onmessageMethod 当接收到消息时执行
+ * @param oncloseMethod 当关闭通道时时执行
+ */
 function webSocketInit(websocketUrl,onopenMethod,onmessageMethod,oncloseMethod){
     //检查浏览器是否支持WebSocket
     if (!window.WebSocket) {

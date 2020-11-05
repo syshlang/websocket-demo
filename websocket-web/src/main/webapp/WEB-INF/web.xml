@@ -26,7 +26,7 @@
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>
-      classpath*:META-INF/spring/application.xml
+      classpath*:META-INF/spring/application*.xml
     </param-value>
   </context-param>
   <!-- springMVC的核心控制器 -->

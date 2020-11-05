@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2020.
+  ~ @File: application-websocket.xml
+  ~ @Description:
+  ~ @Author: sunys
+  ~ @Date: 2020/11/5 下午4:56
+  ~ @since:
+  -->
+
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:websocket="http://www.springframework.org/schema/websocket"
@@ -6,7 +15,7 @@
 
     <!--WebSocket-->
     <websocket:handlers>
-        <websocket:mapping path="/elockMonitor" handler="elockMonitorHandler"/>
+        <websocket:mapping path="/monitor" handler="monitorHandler"/>
     </websocket:handlers>
-    <bean id="elockMonitorHandler" class="com.syshlang.websocket.common.ElockMonitorTextWebSocket"/>
+    <bean id="monitorHandler" class="com.syshlang.websocket.simple.MonitorTextWebSocket"/>
 </beans>
