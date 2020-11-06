@@ -7,7 +7,7 @@
  * @since:
  */
 
-package com.syshlang.websocket.simple;
+package com.syshlang.websocket.server;
 
 import com.google.gson.Gson;
 import com.syshlang.websocket.common.constants.Status;

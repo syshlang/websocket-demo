@@ -7,7 +7,7 @@
  * @since:
  */
 
-package com.syshlang.websocket.simple;
+package com.syshlang.websocket.server;
 
 
 import org.junit.jupiter.api.Test;

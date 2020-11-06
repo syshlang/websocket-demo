@@ -7,4 +7,4 @@
  * @since:
  */
 
-package com.syshlang.websocket.simple;
+package com.syshlang.websocket.server;
