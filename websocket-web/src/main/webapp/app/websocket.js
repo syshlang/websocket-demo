@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2019. GRGBanking
+ * Copyright (c) 2020.
  * @File: websocket.js
  * @Description:
  * @Author: sunys
- * @Date: 2019/8/6 下午3:00
+ * @Date: 2020/11/6 下午3:41
  * @since:
  */
 
