@@ -7,21 +7,19 @@
  * @since:
  */
 
-package com.syshlang.websocket.simple;
+package com.syshlang.websocket.server;
 
 
 import com.google.gson.Gson;
 import com.syshlang.websocket.common.constants.Status;
 import com.syshlang.websocket.common.vo.MessageVo;
 import org.apache.log4j.Logger;
-import org.springframework.util.StringUtils;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
 import java.io.IOException;
-import java.net.URI;
 import java.security.Principal;
 import java.util.*;
 
