@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Accordion Tools - jQuery EasyUI Demo</title>
+    <title>WEBSOCKET</title>
     <link rel="stylesheet" type="text/css" href="../jquery-easyui-1.8.5/themes/default/easyui.css">
     <link rel="stylesheet" type="text/css" href="../jquery-easyui-1.8.5/themes/icon.css">
     <link rel="stylesheet" type="text/css" href="${contextPath}/app/js/tipso/tipso.min.css"/>
@@ -16,18 +16,25 @@
     <link rel="stylesheet" type="text/css" href="${contextPath}/app/css/monitor.css"/>
     <script type="text/javascript">
         var ctx="${contextPath}";
-        var  websocketUrl = "/monitor";
+        var  websocketUrl1 = "/monitor1";
+        var  websocketUrl2 = "/monitor2";
     </script>
 </head>
 <body>
 <div class="top_page">
-    <div class="ebm_box_text ebm_box_page">
+    <div class="box_text box_page">
         服务状态：
         <span style="color:blue;display: none">正常</span><span style="color:red;">异常</span>
     </div>
 </div>
-<div id="monitor" data-options="region:'center',border:false" style="bottom: 50px;overflow: auto;">
+<div class="bottom_page">
+    <input type="text" id="messsage">
+    <input type="button" value="发送消息1" onclick="sendMessage(1)"/>
+    <input type="button" value="发送消息2" onclick="sendMessage(2)"/>
+    <div id="monitor" data-options="region:'center',border:false" style="bottom: 50px;overflow: auto;">
+    </div>
 </div>
+
 </body>
 <script type="text/javascript" src="${contextPath}/app/monitor.js"></script>
 </html>
