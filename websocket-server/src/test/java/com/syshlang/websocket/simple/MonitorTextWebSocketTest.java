@@ -12,12 +12,10 @@ package com.syshlang.websocket.simple;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Date;
-
 class MonitorTextWebSocketTest {
 
     @Test
     void sendMessage() {
-        MonitorTextWebSocket.sendMessage("{\"data\":\""+new Date().toString()+"\"}");
+        MonitorTextWebSocket.sendMessage();
     }
 }

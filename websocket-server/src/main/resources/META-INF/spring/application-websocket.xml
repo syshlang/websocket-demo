@@ -15,7 +15,7 @@
 
     <!--WebSocket-->
     <websocket:handlers>
-        <websocket:mapping path="/monitor" handler="monitorHandler"/>
+        <websocket:mapping path="/monitor1" handler="monitorHandler"/>
     </websocket:handlers>
     <bean id="monitorHandler" class="com.syshlang.websocket.simple.MonitorTextWebSocket"/>
 </beans>
